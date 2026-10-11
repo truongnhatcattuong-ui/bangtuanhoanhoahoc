@@ -1,0 +1,83 @@
+* { box-sizing: border-box; }
+body {
+    background-color: #0d1117;
+    color: #c9d1d9;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 20px;
+    text-align: center;
+}
+header h1 { margin-bottom: 5px; color: #f0f6fc; }
+.subtitle { font-size: 14px; color: #8b949e; margin-top: 0; margin-bottom: 15px; }
+header input {
+    padding: 10px 15px;
+    width: 380px;
+    border-radius: 6px;
+    border: 1px solid #30363d;
+    background-color: #161b22;
+    color: #fff;
+    font-size: 14px;
+    margin-bottom: 25px;
+    outline: none;
+}
+header input:focus { border-color: #58a6ff; }
+
+/* Lưới bảng tuần hoàn chuẩn 18 cột */
+.periodic-grid {
+    display: grid;
+    grid-template-columns: repeat(18, minmax(55px, 1fr));
+    grid-gap: 5px;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+/* Ô nguyên tố */
+.element-card {
+    background-color: #21262d;
+    border: 1px solid #30363d;
+    border-radius: 4px;
+    padding: 5px 2px;
+    height: 68px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.15s, box-shadow 0.15s;
+}
+.element-card:hover {
+    transform: scale(1.15);
+    z-index: 10;
+    box-shadow: 0 0 10px rgba(88, 166, 255, 0.6);
+}
+.atomic-number { font-size: 9px; text-align: left; padding-left: 3px; color: #8b949e; }
+.symbol { font-size: 16px; font-weight: bold; color: #f0f6fc; }
+.name { font-size: 8px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; color: #8b949e; }
+
+/* Phân loại màu sắc theo tính chất nguyên tố trong JSON */
+.element-card[data-category="diatomic nonmetal"], 
+.element-card[data-category="polyatomic nonmetal"] { background-color: #1f3a5f; border-color: #388bfd; }
+.element-card[data-category="noble gas"] { background-color: #432551; border-color: #bc8cff; }
+.element-card[data-category="alkali metal"] { background-color: #592525; border-color: #f85149; }
+.element-card[data-category="alkaline earth metal"] { background-color: #594525; border-color: #d29922; }
+.element-card[data-category="metalloid"] { background-color: #234d47; border-color: #3fb950; }
+.element-card[data-category="halogen"] { background-color: #4b2347; border-color: #db61a2; }
+.element-card[data-category="transition metal"] { background-color: #263859; border-color: #58a6ff; }
+.element-card[data-category="post-transition metal"] { background-color: #333842; border-color: #8b949e; }
+.element-card[data-category="lanthanide"] { background-color: #523b23; border-color: #e3b341; }
+.element-card[data-category="actinide"] { background-color: #59233b; border-color: #f778ba; }
+
+/* Giao diện Modal Chi tiết */
+.modal {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.75);
+    display: flex; justify-content: center; align-items: center; z-index: 100;
+}
+.modal.hidden { display: none; }
+.modal-content {
+    background: #161b22; border: 1px solid #30363d; padding: 25px;
+    border-radius: 8px; width: 420px; position: relative; text-align: left;
+}
+.modal-content h2 { margin-top: 0; color: #f0f6fc; border-bottom: 1px solid #30363d; padding-bottom: 8px; }
+.modal-content p { font-size: 13px; line-height: 1.4; color: #c9d1d9; }
+#close-modal { position: absolute; top: 12px; right: 18px; font-size: 22px; color: #8b949e; cursor: pointer; }
+#close-modal:hover { color: #f0f6fc; }

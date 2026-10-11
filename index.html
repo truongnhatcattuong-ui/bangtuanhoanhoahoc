@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bảng Tuần Hoàn 118 Nguyên Tố Tương Tác</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Bảng Tuần Hoàn Các Nguyên Tố Hóa Học</h1>
+        <p class="subtitle">Đầy đủ 118 nguyên tố chuẩn quốc tế</p>
+        <input type="text" id="search-input" placeholder="Tìm kiếm theo tên, ký hiệu hoặc số hiệu (ví dụ: H, Au, 79)...">
+    </header>
+
+    <!-- Khu vực hiển thị bảng tuần hoàn -->
+    <main class="periodic-container">
+        <div id="periodic-grid" class="periodic-grid"></div>
+    </main>
+
+    <!-- Hộp thoại Modal xem chi tiết -->
+    <div id="element-modal" class="modal hidden">
+        <div class="modal-content">
+            <span id="close-modal">&times;</span>
+            <div id="modal-body">
+                <!-- Nội dung thông tin sẽ được nạp bằng JS -->
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
